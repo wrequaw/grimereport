@@ -1,0 +1,5 @@
+<h1><%=@grime.title%> by <%=User.find(@grime.user_id).name%></h1>
+
+<h4>Description:</h4>
+<p><%= @grime.description%></p>
+<p>Griminess: <%= @grime.griminess%></p>

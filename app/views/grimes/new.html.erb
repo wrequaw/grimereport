@@ -1,0 +1,15 @@
+<h1>Submit a Grime</h1>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= form_for @grime do |f| %>
+    Title: <%= f.text_field :title %><br />
+    Description: <%= f.text_area :description %><br />
+    Griminess Level:  <%= f.select :griminess, (0..5) %>
+    Select Grimer: <%= f.collection_select(:user_id, User.all, :id, :name) %><br />
+    <%= f.submit %>
+<% end %>

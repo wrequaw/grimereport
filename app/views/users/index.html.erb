@@ -1,0 +1,13 @@
+<h1>All Users</h1>
+<table>
+    <tr>Name</tr>
+    <tr>Email</tr>
+    <tr>Total Griminess</tr>
+    <%@users.each do |u|%>
+        <tr>
+            <td><%=u.name%></td>
+            <td><%=u.email%></td>
+            <td><%=u.griminess%></td>
+        </tr>
+    <%end%>
+</table>

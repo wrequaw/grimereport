@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
             user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
                 u.name = auth['info']['name']
                 u.email = auth['info']['email']
+                u.griminess = 0
             end
     
             if user.valid?
