@@ -1,0 +1,4 @@
+<%= form_for(Password.new, method: :post) do |form| %>
+  Enter Site Password: <%= form.password_field :password%><br />
+  <%= form.submit "Enter" %>
+<% end %>

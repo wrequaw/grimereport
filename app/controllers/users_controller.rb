@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
+  before_action :require_password_verification
   def index
     @users = User.all 
   end
 
   def show
       @user = User.find(params[:id])
+      user.grimes.each do |g|
+        
+      end
   end
 
   def new
@@ -14,10 +18,10 @@ class UsersController < ApplicationController
   def create
       @user = user.new(user_params)
       if @user.save
-          flash[:success] = "Grime Saved Successfully"
+          flash[:success] = "User Saved Successfully"
           redirect_to @user
      else
-         flash[:error] = "Error: Could Not Save Grime!"
+         flash[:error] = "Error: Could Not Save User!"
          render :new
      end
  end

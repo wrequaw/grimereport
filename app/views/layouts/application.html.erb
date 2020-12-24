@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Grimereport</title>
+    <title> The Grime Report</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,27 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">The Grime Report</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        
+        <ul class="navbar-nav">
+          <li class='nav-item'><%=link_to "Home", root_path%></li>
+          <li class='nav-item'><%=link_to "All Grimes", grimes_path%></li>
+          <li class='nav-item'><%=link_to "Submit a Grime", new_grime_path%></li>
+          <li class='nav-item'><%=link_to "Grimers", users_path%></li>
+        </ul>
+        <%if !session[:user_id].nil?%>
+          <%=User.find(session[:user_id]).name %> 
+        <%end%>
+        <%=button_to 'Log in with Google', '/auth/google_oauth2'%>
+        <%=button_to 'Log out', '/logout', method: :get%>
+        
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

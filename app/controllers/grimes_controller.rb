@@ -1,4 +1,5 @@
 class GrimesController < ApplicationController
+  before_action :require_password_verification
   def index
       @grimes = Grime.all 
   end
@@ -13,6 +14,8 @@ class GrimesController < ApplicationController
 
   def create
       @grime = Grime.new(grime_params)
+      
+      
       if @grime.save
           flash[:success] = "Grime Saved Successfully"
           redirect_to @grime
@@ -41,8 +44,11 @@ class GrimesController < ApplicationController
       Grime.find(params[:id]).destroy
   end
 
+    
 
+  
   private
+  
 
       def grime_params
           params.require(:grime).permit(:title, :description, :griminess,:user_id)

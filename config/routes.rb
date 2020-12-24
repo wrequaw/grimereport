@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+  
+  root to: 'pages#home'
+  
+  get "/login", to: redirect("auth/google_oauth2")
+  get 'auth/google_oauth2/callback', to: "sessions#create"
+  get '/logout', to: "sessions#destroy"
+  get '/auth/failure', to: redirect('/')
+
+  resources :passwords
+  resources :session, only: [:create, :destroy]
   resources :grimes
   resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get 'auth/google_oauth2/callback', to: 'sessions#omniauth'
-  root to: 'grimes#index'#'pages#home'
+  
+
 end
 
