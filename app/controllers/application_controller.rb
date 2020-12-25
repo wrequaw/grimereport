@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
             return redirect_to new_password_path
         end
     end
+
 end

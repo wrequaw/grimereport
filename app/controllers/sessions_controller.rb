@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     
             if user.valid?
                 session[:user_id] = user.id
+                flash[:notice] = "Successfully Logged In"
                 cookies.encrypted[:current_user_id] = {value: user.id, expires: Time.now + 7.days}
                 redirect_to root_path
             else

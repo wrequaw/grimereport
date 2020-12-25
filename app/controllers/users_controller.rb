@@ -6,9 +6,6 @@ class UsersController < ApplicationController
 
   def show
       @user = User.find(params[:id])
-      user.grimes.each do |g|
-        
-      end
   end
 
   def new

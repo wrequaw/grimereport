@@ -1,1 +1,48 @@
 @import "bootstrap/scss/bootstrap";
+body{
+    background: url("PKT.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-color:rgb(122, 147, 255);
+    font-family: 'Khand', sans-serif;
+    letter-spacing: 5px;
+}
+
+.nav-link{
+    /* background-color: rgb(255, 255, 92); */
+    color:rgb(122, 147, 255);
+    font-weight: 500;
+    font-size: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    margin-left: 50px;
+    margin-right: 50px;
+    /* border: 1px solid pink;*/
+}
+
+
+nav{
+    /* background-color: pink; */
+    color: pink;
+} 
+
+.navbar{
+    border-bottom: 5px solid pink;
+    background-color: white;
+}
+
+.active{
+    background-color: pink;
+}
+
+.active:hover{
+    background-color: pink;
+}
+
+
+/* .navbar-brand{
+    font-size: 1.75rem;
+    font-weight: 800;
+} */

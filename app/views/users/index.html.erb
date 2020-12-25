@@ -1,12 +1,10 @@
 <h1>All Users</h1>
 <table>
-    <tr>Name</tr>
-    <tr>Email</tr>
-    <tr>Total Griminess</tr>
+    <th>Name</th>
+    <th>Total Griminess</th>
     <%@users.each do |u|%>
         <tr>
-            <td><%=u.name%></td>
-            <td><%=u.email%></td>
+            <td><%=link_to u.name, user_path(u)%></td>
             <td><%=u.griminess%></td>
         </tr>
     <%end%>
