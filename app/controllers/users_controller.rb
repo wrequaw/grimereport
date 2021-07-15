@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_password_verification
   def index
-    @users = User.all 
+    @users = User.order('griminess DESC')
   end
 
   def show
