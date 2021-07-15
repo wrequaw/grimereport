@@ -1,18 +1,18 @@
 @import "bootstrap/scss/bootstrap";
 body{
-    background: url("PKT.jpg");
+    // background: url("PKT.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
-    background-color:rgb(122, 147, 255);
+    background-color:rgb(187, 209, 223);
     font-family: 'Khand', sans-serif;
     letter-spacing: 5px;
 }
 
 .nav-link{
     /* background-color: rgb(255, 255, 92); */
-    color:rgb(122, 147, 255);
+    color:rgb(137, 255, 122);
     font-weight: 500;
     font-size: 1.5rem;
     position: relative;
@@ -33,6 +33,9 @@ nav{
     background-color: white;
 }
 
+.nav-item {
+    margin-right: 1rem;
+}
 .active{
     background-color: pink;
 }
@@ -41,6 +44,43 @@ nav{
     background-color: pink;
 }
 
+#allgrimes{
+    text-align: center;
+    width: 50%;
+    margin: 5rem auto;
+    background-color: pink;
+    border-radius: 3rem;
+    border: solid white 1rem;
+    padding: 2rem;
+}
+
+#all-grimes-title{
+    border-bottom: solid white .5rem;
+    width: 80%;
+    margin: auto;
+}
+#grime-list{
+    margin: 1rem;
+}
+
+#grime-list-item{
+    color: pink;
+}
+
+#grimes-table{
+    margin: auto;
+    margin-top: 1rem;
+}
+
+#grime-form{
+    width: 50%;
+    text-align: left;
+    margin: auto;
+    margin-top: 1rem;
+}
+// #user-grime-table{
+//     margin: auto;
+// }
 
 /* .navbar-brand{
     font-size: 1.75rem;

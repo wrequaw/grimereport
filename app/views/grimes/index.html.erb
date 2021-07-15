@@ -1,4 +1,8 @@
-<h1>All Grimes</h1>
-<%@grimes.each do |g|%>
-    <li><%=link_to "#{g.title}", grime_path(g) %></li>
-<%end%>
+<div id='allgrimes'>
+    <h1 id='all-grimes-title'>All Grimes</h1>
+    <div id=grime-list>
+        <%@grimes.each do |g|%>
+            <li id='grime-list-item'><%=link_to "#{g.title}", grime_path(g) %></li>
+        <%end%>
+    </div>
+</div>

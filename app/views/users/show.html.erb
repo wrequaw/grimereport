@@ -1,17 +1,21 @@
-<h1><%=@user.name%></h1>
-<h4>Griminess: <%=@user.griminess%>
-<h3>Grimes</h2>
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Griminess</th>
-    </tr>
-    <%@user.grimes.each do |g|%>
+<div id='allgrimes'> 
+    <h1><%=@user.name%></h1>
+    <h4>Griminess: <%=@user.griminess%>
+    <h3>Grimes</h2>
+    <table id='user-grime-table'>
         <tr>
-            <td><%=g.title%></td>
-            <td><%=g.description%></td>
-            <td><%=g.griminess%></td>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Griminess</th>
         </tr>
-    <%end%>
-</table>
+        <%@user.grimes.each do |g|%>
+            <tr>
+                <!-- <td><%=g.title%></td> -->
+                <td><li id='grime-list-item'><%=link_to "#{g.title}", grime_path(g) %></li></td>
+                
+                <td><%=g.description%></td>
+                <td><%=g.griminess%></td>
+            </tr>
+        <%end%>
+    </table>
+</div>
